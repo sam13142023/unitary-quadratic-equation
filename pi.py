@@ -1,5 +1,4 @@
 import time
-import tkinter
 ###############计算当前时间
 time1=time.time()
 print("欢迎使用圆周率计算小程序，使用前请合理估计电脑性能再输入位数！！！避免不必要的死机")
