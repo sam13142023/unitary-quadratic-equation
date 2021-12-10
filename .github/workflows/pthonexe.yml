@@ -34,5 +34,6 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: exeFile
-        path: dist/pi.exe
-        path: dist/一元二次方程计算.exe
+        path: |
+          dist/pi.exe
+          dist/一元二次方程计算.exe
