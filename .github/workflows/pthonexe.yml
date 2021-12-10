@@ -28,7 +28,8 @@ jobs:
         pip install -r requirements.txt
     - name: AutoBuild
       run: |
-        pyinstaller stopclass.py -w -F --key ffdghjofjhthrffd
+        pyinstaller pi.py -w --key ffdghjofjhthrffd
+        pyinstaller 一元二次方程计算.py -w --key ffdghjofjhthrffd
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
