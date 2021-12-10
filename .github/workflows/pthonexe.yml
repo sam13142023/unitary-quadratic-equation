@@ -28,8 +28,8 @@ jobs:
         pip install -r requirements.txt
     - name: AutoBuild
       run: |
-        pyinstaller pi.py -w 
-        pyinstaller 一元二次方程计算.py -w 
+        pyinstaller pi.py -F
+        pyinstaller 一元二次方程计算.py -F
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
