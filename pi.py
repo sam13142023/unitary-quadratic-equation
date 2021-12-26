@@ -31,11 +31,10 @@ pai = he*4
 pai //= 10**10
 paistring=str(pai)
 result=paistring[0]+str('.')+paistring[1:len(paistring)]
-print("计算完成，结果已经存入同目录下的'PI.txt'")
-file_handle=open('PI.txt',mode='w')
-file_handle.write('计算结果为：'+result+"\n")
-time2=time.time()
-file_handle.write('总共耗时：' + str(time2 - time1) + '秒\n')
-file_handle.write('作者Samwang，联系方式：qq：381996398\ntg:https://t.me/samwang1314')
-file_handle.close()
+print("计算完成，正在存入结果")
+with open('PI.txt',mode='w') as file_handle:
+    file_handle.write('计算结果为：\n'+result+"\n\n")
+    time2=time.time()
+    file_handle.write('总共耗时：' + str(time2 - time1) + '秒\n')
+    file_handle.write('作者Samwang，联系方式：qq：381996398\ntg:https://t.me/samwang1314')
 
