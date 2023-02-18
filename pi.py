@@ -1,4 +1,5 @@
 import time
+import os
 ###############计算当前时间
 time1=time.time()
 print("欢迎使用圆周率计算小程序，使用前请合理估计电脑性能再输入位数！！！避免不必要的死机")
@@ -31,12 +32,23 @@ pai = he*4
 pai //= 10**10
 paistring=str(pai)
 result=paistring[0]+str('.')+paistring[1:len(paistring)]
-print("计算完成，结果已经存入同目录下pi文件夹的'PI.txt'")
-os.makedirs(/PI, mode=0o777)
-file_handle=open('PI.txt',mode='w')
-file_handle.write('计算结果为：'+result+"\n")
-time2=time.time()
-file_handle.write('总共耗时：' + str(time2 - time1) + '秒\n')
-file_handle.write('作者Sam1314，联系方式：tg:https://t.me/samwang1314')
-file_handle.close()
+print("计算完成，结果已经存入pi文件夹的'PI.txt'")
+pathiscreated=str(os.path.exists('/pi'))
+if pathiscreated=="True":
+    with open('/pi/PI.txt',mode='w') as file_handle:
+        file_handle.write('计算结果为：\n'+result+"\n\n")
+        time2=time.time()
+        file_handle.write('总共耗时：' + str(time2 - time1) + '秒\n')
+    start_directory = r'\pi'
+    os.startfile(start_directory)
+else:
+    os.mkdir('/pi')
+    print("计算完成，正在存入结果")
+    with open('/pi/PI.txt',mode='w') as file_handle:
+        file_handle.write('计算结果为：\n'+result+"\n\n")
+        time2=time.time()
+        file_handle.write('总共耗时：' + str(time2 - time1) + '秒\n')
+        file_handle.write('作者Sam，联系方式:tg:https://t.me/chatsamandjyf_bot')
 
+    start_directory = r'\pi'
+    os.startfile(start_directory)
